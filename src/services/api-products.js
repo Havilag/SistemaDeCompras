@@ -35,7 +35,8 @@ export const ApiProduct = async () => {
         id: product.id,
         title: product.title,
         price: product.price,
-        image: product.thumbnail
+        image: product.thumbnail,
+        description: product.description
     }));
 
 };

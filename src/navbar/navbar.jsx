@@ -10,7 +10,6 @@ export function NavBar () {
                     <li><Link to="/">clothing</Link></li>
                     <li><Link to="/">Accessories</Link></li>
                     <li><Link to="/">footwear</Link></li>
-                    <li><Link to="/">Login</Link></li>
                 </ul>
             </nav>
         </div>

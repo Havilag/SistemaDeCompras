@@ -1,0 +1,162 @@
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0; 
+    width: 100%;
+    background-color: #E5E7EB;
+}
+
+.full-header{
+    display: flex;
+    flex-direction: column;
+    background-color: #304062;
+    padding: 0 0 60px 0;
+    width: 100%;
+    align-items: center; 
+    gap: 20px;
+}
+
+.container-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+
+}
+
+.title {
+    flex: 1;
+    text-align: end;
+    padding: 20px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.Login{
+    display: flex;
+    background: white;
+    padding: 12px 24px;
+    border-radius: 15px;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.3);
+    color: #111;
+    font-family: inherit;
+    transition: background-color 0.3s ease;
+    gap: 10px;
+}
+
+.Login:hover {
+    background-color: rgba(255, 255, 255, 0.5); 
+}
+
+.user{
+    color: #444; 
+    font-size: 20px;
+}
+
+.Button-Login {
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+    font-size: 16px;
+    font-weight: 500;
+    
+}
+
+
+.container-products{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: start;
+    justify-content: center;
+    padding: 20px;
+    gap: 50px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.ProductImage{
+    width: 100%;   
+    max-width: 500px;  
+    height: 500px;
+    height: auto;
+    border: 1px solid black;
+}
+
+.ProductImage img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.button-buy{
+    display: flex;
+}
+
+.description{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 20px;
+
+}
+
+.description h2{
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.description p{
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.description span{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    font-size: 20px;
+}
+
+.button-buy{
+    margin-top: 20px;
+}
+
+.button-buy svg {
+    width: 32px;  
+    height: 32px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.button-buy svg:hover {
+    transform: scale(1.1); 
+}
+
+.button-buy p{
+    font-size: 20px;
+}
+
+.buy{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    background: black;
+    border: 1px solid black;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    font-family: inherit;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.buy:hover {
+    background-color: rgba(0, 0, 0, 0.5); 
+}
