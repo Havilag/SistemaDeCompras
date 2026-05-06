@@ -19,24 +19,7 @@ export const Home = () => {
 
     return (
         <div className={styles.container}>
-            <div className={styles["full-header"]}>
-                <div className={styles["container-header"]}>
-                    <div className={styles.title}>
-                        <h1>Aura</h1>
-                    </div>
-
-                    <div className={styles["Button-Login"]}>
-                        <button className={styles.Login}>
-                            Login
-                            <CircleUserRound className={styles.user} />
-                        </button>
-                    </div>
-                </div>
-
-                <div className={styles.NavBar}>
-                    <NavBar />
-                </div>
-            </div>
+            <NavBar/>
 
             <div className={styles["products-grid"]}>
                 {

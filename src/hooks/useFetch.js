@@ -1,5 +1,6 @@
+import { CartProduct } from "../context/cartContext";
 import { ApiProduct } from "../services/api-products";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 
 
 export const UseFetch = () =>{
@@ -49,6 +50,5 @@ export const UseFetch = () =>{
         NextPage,
         PrevPage,
         page,
-        
-    }
-}
+    };
+};
