@@ -9,20 +9,26 @@ import { useNavigate } from "react-router-dom"
 
 export const Home = () => {
 
-    const { products, loading, page, NextPage, PrevPage } = UseFetch();
+    const [selectedCategory, setSelectedCategory] = useState("all");
+    const {products, loading, page, NextPage, PrevPage } = UseFetch(selectedCategory);
     const navigate = useNavigate();
+    const category = ["all", "clothing", "Accessories", "footwear"]
 
+  
 
     if (loading) {
         return <div>Cargando productos...</div>;
     }
 
+  
+
     return (
         <div className={styles.container}>
-            <NavBar/>
+            <NavBar ChangeCategory={setSelectedCategory}/>
 
             <div className={styles["products-grid"]}>
                 {
+                    
                     products.map((product) => (
                         <div key={product.id} onClick={() => navigate(`/product/${product.id}`)} className={styles["Date-products"]}>
                             <img src={product.image} />

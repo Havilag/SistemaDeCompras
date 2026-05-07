@@ -3,34 +3,47 @@ import { ApiProduct } from "../services/api-products";
 import { useContext, useEffect, useState } from "react";
 
 
-export const UseFetch = () =>{
+export const UseFetch = (selectedCategory) =>{
 
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
     const [page, setPage] = useState(1);
     const itemsPerPage = 9;
 
+
+    const categoryGroups = {
+            clothing: ["tops", "womens-dresses", "mens-shirts"],
+            accessories: ["womens-bags", "sunglasses", "womens-jewellery", "mens-watches", "womens-watches"],
+            footwear: ["womens-shoes", "mens-shoes"]
+        };
+
+
     const LastIndex = page * itemsPerPage;
     const FirstIndex = LastIndex - itemsPerPage;
+    
 
-    
-        useEffect(() => {
-    
-            const LoadData = async () => {
-                try {
-                    const response = await ApiProduct();
-                    setProducts(response);
-                } catch (error) {
-                    alert(error);
-                }finally{
-                    setLoading(false);
-                }
+     
+    useEffect(() => {
+
+        const LoadData = async () => {
+            try {
+                const response = await ApiProduct();
+                setProducts(response);
+            } catch (error) {
+                alert(error);
+            }finally{
+                setLoading(false);
             }
-            LoadData();
-        }, []);
+        }
+        LoadData();
+    }, []);
 
 
-    const PageProduct = products.slice(FirstIndex,LastIndex);
+    useEffect(() => {
+        setPage(1);
+    }, [selectedCategory]);
+
+
 
     const NextPage = () =>{
         if(LastIndex < products.length){
@@ -44,8 +57,21 @@ export const UseFetch = () =>{
         } 
     }
 
+    const FilterProduct = 
+        selectedCategory ===  "all"
+            ? products
+            : products.filter((SelectedProduct) => {
+                const group = categoryGroups[selectedCategory];
+                return group ? group.includes(SelectedProduct.category) : false  
+            });
+    
+
+    const paginatedProducts = FilterProduct.slice(FirstIndex, LastIndex);
+
+
     return {
-        products: PageProduct, 
+        products: paginatedProducts,
+        allProducts: FilterProduct, 
         loading,
         NextPage,
         PrevPage,

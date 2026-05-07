@@ -2,16 +2,26 @@
     position: fixed;
     top: 80px;
     right: 20px;
-    width: 350px;
+    width: 380px;
     max-height: 500px;
     background-color: #ffffff;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1), 0 5px 15px rgba(0, 0, 0, 0.05);
     border-radius: 12px;
     padding: 20px;
     display: flex;
     flex-direction: column;
     z-index: 1000;
     overflow-y: auto;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.container::-webkit-scrollbar {
+    width: 6px;
+}
+
+.container::-webkit-scrollbar-thumb {
+    background: #e0e0e0;
+    border-radius: 10px;
 }
 
 
@@ -22,6 +32,11 @@
     gap: 8px 15px;
     padding: 15px 0;
     border-bottom: 1px solid #eee;
+    transition: background-color 0.2s ease
+}
+
+.product-cart li:hover {
+    background-color: #fcfcfc; 
 }
 
 .product-cart li:last-child {
@@ -35,4 +50,14 @@
     object-fit: contain; 
     border-radius: 8px;
     background-color: #f9f9f9;
+}
+
+.Buy{
+    width: 100%;
+    font-weight: 700;
+    border-radius: 20px;
+    border: 1px solid black ;
+    color: white;
+    background-color: black;
+    padding: 6px 10px;
 }

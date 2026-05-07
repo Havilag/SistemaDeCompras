@@ -7,10 +7,10 @@ import { useCount } from "../../hooks/useCount";
 import { useContext } from "react";
 import { CartProduct } from "../../context/cartContext";
 
-export const ProductDate = () => {
+export const ProductData = () => {
 
     const { id } = useParams();
-    const { products, loading } = UseFetch();
+    const {allProducts, products, loading } = UseFetch("all");
     const {count, increase, decrease, resetCount} = useCount();
     const { addToCart } = useContext(CartProduct);
 
@@ -19,14 +19,14 @@ export const ProductDate = () => {
         return <div>Cargando productos...</div>;
     }
 
-    const product = products.find((item) => item.id === Number(id));
+    const product = allProducts.find((item) => item.id === Number(id));
     
 
     const SendProduct = () =>{
         if(!product){
             return;
         }
-        const ProductDate = {
+        const ProductData = {
             id: product.id,
             title: product.title,
             image: product.image,
@@ -34,10 +34,12 @@ export const ProductDate = () => {
             quantity: count
         }
         
-        addToCart(ProductDate);
+        addToCart(ProductData);
         resetCount();
     }
 
+
+    
 
     return (
         <div className={styles.container}>
