@@ -6,6 +6,7 @@ import { CircleUserRound, SquareMinus, SquarePlus } from "lucide-react";
 import { useCount } from "../../hooks/useCount";
 import { useContext } from "react";
 import { CartProduct } from "../../context/cartContext";
+import { useCartStore } from "../../store/useCartStore";
 
 export const ProductData = () => {
 
@@ -15,6 +16,9 @@ export const ProductData = () => {
     const { addToCart } = useContext(CartProduct);
 
 
+    const AddToCart = useCartStore((cartStore) => cartStore.AddToCart)
+
+    
     if (loading) {
         return <div>Cargando productos...</div>;
     }
@@ -36,6 +40,7 @@ export const ProductData = () => {
         
         addToCart(ProductData);
         resetCount();
+        AddToCart(ProductData);
     }
 
 

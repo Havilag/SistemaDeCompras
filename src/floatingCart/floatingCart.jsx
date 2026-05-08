@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { CartProduct } from "../context/cartContext"
 import styles from "./floatingCart.module.css"
+import { Link } from "react-router-dom";
 
 export const FloatingCart = ({CloseCart}) => {
 
@@ -24,7 +25,7 @@ export const FloatingCart = ({CloseCart}) => {
                 }
             </ul>
             <p>Total: {totalPrice}</p>
-            <button className={styles.Buy}>Buy</button>
+            <Link className={styles.Buy} to="/checkout">Buy</Link>
          
             {
                 product.length === 0 ? (

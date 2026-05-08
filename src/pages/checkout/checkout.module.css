@@ -1,0 +1,160 @@
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #f4f4f4;
+}
+
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #304062;  
+    padding: 0.8rem 5%;
+    width: 100%;
+    align-items: center; 
+}
+
+.header h1{
+    margin: 0;
+    letter-spacing: 1px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.login-container{
+    display: flex;
+    align-items: center;
+}
+
+.login{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    padding: 8px 18px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.login:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.user {
+    width: 24px;
+    height: 24px;
+}
+
+.purchase {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.purchase ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.list-product {
+    display: grid;
+    grid-template-columns: 100px 1fr 150px;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.list-product img {
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    object-fit: contain;
+}
+
+
+
+.subtotalText {
+    font-weight: 600;
+    text-align: right;
+    font-size: 16px;
+}
+
+.Total-Cost{
+    margin-top: 20px;
+    text-align: right;
+    padding-right: 10px;
+}
+
+.Total-Cost h2 {
+    font-size: 22px;
+    color: #304062;
+}
+
+.product-info{
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    gap: 4px; 
+}
+
+.product-info p {
+    margin: 0;
+    font-size: 14px;
+    color: #666;
+}
+
+.subtotalText {
+    font-weight: 600;
+    text-align: right;
+    font-size: 16px;
+    color: #333;
+}
+
+.product-info p {
+    margin: 0;
+    font-size: 14px;
+    color: #666;
+}
+
+.quantity {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 8px;
+}
+
+.quantity p {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    min-width: 20px; 
+    text-align: center;
+}
+
+.button-icon{
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+    color: #304062;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.button-icon:hover {
+    color: #4a6396;
+    transform: scale(1.1); 
+}
+
+.button-icon:active {
+    transform: scale(0.9); 
+}
