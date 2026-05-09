@@ -5,6 +5,7 @@ import { useContext, useState } from "react";
 import { FloatingCart } from "../floatingCart/floatingCart";
 import { UseFetch } from "../hooks/useFetch";
 import { CartProduct } from "../context/cartContext";
+import { UseAuthStore } from "../store/useAuthStore";
 
 export function NavBar({ ChangeCategory }) {
 
@@ -14,7 +15,8 @@ export function NavBar({ ChangeCategory }) {
   const OpenCart = () => setOpen(!Open);
   const navigate = useNavigate();
 
-
+  const validation = UseAuthStore((validate) => validate.authenticated);
+  const UserName = UseAuthStore((UserData) => UserData.username);
 
   const ShowCart = () => {
     if (!Open) {
@@ -61,10 +63,20 @@ export function NavBar({ ChangeCategory }) {
             }
           </div>
 
-          <button className={styles.Login}>
-            Login
-            <CircleUserRound className={styles.user} />
-          </button>
+          {
+            validation ? (
+              <div className={styles.Login}>
+                {UserName.username}
+                <CircleUserRound className={styles.user} />
+              </div>
+            ) : (
+              <Link to="/" className={styles.Login}>
+                Login
+                <CircleUserRound className={styles.user} />
+              </Link>
+            )
+
+          }
 
         </div>
       </div>

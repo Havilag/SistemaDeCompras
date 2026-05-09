@@ -3,6 +3,7 @@
     width: 100%;
     min-height: 100vh;
     background-color: #f4f4f4;
+    padding-bottom: 50px;
 }
 
 .header{
@@ -20,6 +21,7 @@
     letter-spacing: 1px;
     font-size: 20px;
     font-weight: 700;
+    color: white;
 }
 
 .login-container{
@@ -48,6 +50,41 @@
 .user {
     width: 24px;
     height: 24px;
+}
+
+.MainContainer {
+    position: relative; 
+    max-width: 1200px; 
+    margin: 0 auto;
+    padding-top: 40px;
+  
+}
+
+.GoBack{
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left: 40px;
+    top: 40px;
+    gap: 10px;
+    padding: 10px 20px;
+    border: 1px solid #304062;
+    border-radius: 25px;
+    background-color: transparent;
+    color: #304062;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.GoBack:hover {
+    background-color: #304062;
+    color: white;
+    transform: translateX(-5px); 
+}
+
+.GoBack svg {
+    width: 20px;
+    height: 20px;
 }
 
 .purchase {
@@ -157,4 +194,191 @@
 
 .button-icon:active {
     transform: scale(0.9); 
+}
+
+.additional-data, 
+.payment-method {
+    display: flex;
+    flex-wrap: wrap; 
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+    max-width: 900px; 
+    margin: 20px auto;
+    padding: 20px 30px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.additional-data:hover, 
+.payment-method:hover {
+    border-color: #304062; 
+    box-shadow: 0 4px 12px rgba(48, 64, 98, 0.1);
+}
+
+.additional-data span, 
+.payment-method span {
+    font-weight: 600;
+    color: #333;
+    flex-grow: 1; 
+}
+
+.arrow {
+    font-size: 0.8rem;
+    color: #888;
+}
+
+.direction, 
+.payment {
+    width: 100%; 
+    cursor: default; 
+}
+
+.Form-Address, 
+.Form-payment {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 20px;
+}
+
+.FormConatiner, 
+.PaymentConatiner {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    width: 100%;
+}
+
+.Form-Address p, 
+.Form-payment p {
+    grid-column: span 2; 
+    margin: 0;
+    font-weight: 600;
+    font-size: 14px;
+    color: #555;
+}
+
+.Form-Address input, 
+.Form-payment input {
+    grid-column: span 2;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    width: 100%; 
+    box-sizing: border-box;
+}
+
+.Form-Address input:focus, 
+.Form-payment input:focus {
+    outline: none;
+    border-color: #304062;
+    background-color: #f9faff;
+}
+
+.make-purchase{
+    display: flex;
+    justify-content: center;
+    margin: 30px auto;
+    cursor: pointer;
+    max-width: 900px;
+    border-radius: 20px;
+    border: 1px solid black;
+    background-color: black;
+    color: white;
+    padding: 10px 15px;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+
+
+/* --- COMPUTADORAS --- */
+@media (min-width: 1441px) {
+    .MainContainer {
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+    .list-product {
+        grid-template-columns: 120px 1fr 180px;
+    }
+}
+
+/* --- LAPTOPS --- */
+@media (max-width: 1440px) and (min-width: 1025px) {
+    .MainContainer {
+        width: 850px;
+        margin: 0 auto;
+    }
+    .list-product {
+        grid-template-columns: 100px 1fr 150px;
+    }
+}
+
+/* --- TABLETS --- */
+@media (max-width: 1024px) and (min-width: 481px) {
+    .MainContainer {
+        width: 90%;
+        margin: 0 auto;
+    }
+    .list-product {
+        grid-template-columns: 80px 1fr 120px;
+        gap: 15px;
+    }
+    .Form-Address, .Form-payment {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+}
+
+/* --- CELULARES --- */
+@media (max-width: 480px) {
+    .MainContainer {
+        width: 100%;
+        padding: 0 10px;
+    }
+
+    .make-purchase a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding: 15px 0;
+        font-size: 18px;
+        border-radius: 30px;
+    }
+
+    .list-product {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px 0;
+        border-bottom: 1px solid #eee;
+    }
+
+    .product-info h2 {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    .quantity {
+        justify-content: center;
+    }
+
+    .subTotal {
+        margin-top: 10px;
+        font-size: 16px;
+    }
+y
+    .Form-Address, .Form-payment {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .Form-Address input, .Form-payment input {
+        width: 100%;
+        padding: 12px;
+    }
 }

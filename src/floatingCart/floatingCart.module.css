@@ -65,3 +65,75 @@
     padding: 6px 10px;
     cursor: pointer;
 }
+
+
+/* --- COMPUTADORAS / LAPTOPS (Escritorio Estándar) --- */
+@media (min-width: 1025px) {
+    .container {
+        width: 380px;
+        right: 20px;
+        top: 80px;
+    }
+}
+
+/* --- TABLETS (Promedio) --- */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .container {
+        width: 340px;
+        top: 75px;
+        right: 15px;
+        max-height: 450px;
+    }
+
+    .product-cart li {
+        gap: 5px 12px;
+    }
+}
+
+/* --- LAPTOPS PEQUEÑAS / TABLETS GRANDES --- */
+@media (max-width: 768px) {
+    .container {
+        width: 320px;
+        top: 70px;
+        right: 10px;
+        padding: 15px;
+    }
+
+    .product-cart img {
+        height: 70px;
+    }
+}
+
+/* --- CELULARES  --- */
+@media (max-width: 480px) {
+    .container {
+        width: 340px; 
+        right: 10px;
+        left: 10px; 
+        margin: 0 auto;
+        top: 65px;
+        max-height: 400px;
+        padding: 12px;
+    }
+
+    .product-cart li {
+        grid-template-columns: 60px 1fr;
+        padding: 10px 0;
+        gap: 5px 10px;
+    }
+
+    .product-cart img {
+        height: 60px;
+    }
+
+    .product-cart p {
+        font-size: 13px;
+        margin: 1px 0;
+    }
+
+    .Buy {
+        padding: 10px 0px;
+        font-size: 16px;
+        border-radius: 25px;
+    }
+}

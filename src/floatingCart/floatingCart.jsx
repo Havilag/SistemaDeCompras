@@ -7,7 +7,7 @@ export const FloatingCart = ({CloseCart}) => {
 
     const { product } = useContext(CartProduct);
 
-    const totalPrice = product.reduce((acc, item) => acc + (item.price * item.quantity), 0);
+    const totalPrice = product.reduce((acc, item) => acc + (item.price * item.quantity), 0).toFixed(2);
 
     return (
         <div onClick={CloseCart} className={styles.container}>

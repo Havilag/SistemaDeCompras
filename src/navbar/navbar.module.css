@@ -140,13 +140,73 @@
 
 
 
-@media (max-width: 480px) {
-    .container-nav ul {
-        gap: 15px; 
-        flex-wrap: wrap; 
-        padding: 10px;
+/* --- TABLETS (Promedio 768px) --- */
+@media (max-width: 768px) {
+    .full-header {
+        padding: 20px 0 30px 0; 
     }
+
+    .title h1 {
+        font-size: 28px;
+    }
+
+    .container-nav ul {
+        gap: 40px; 
+    }
+}
+
+/* --- CELULARES (Promedio 480px) --- */
+@media (max-width: 480px) {
+    .full-header {
+        padding: 15px 0 20px 0;
+        gap: 15px;
+    }
+
+    .container-header {
+        padding: 0 15px; 
+    }
+
+    .title h1 {
+        font-size: 24px;
+    }
+
+    .Button-Login {
+        gap: 15px; 
+    }
+
+    .Login {
+        padding: 8px 16px;
+        font-size: 14px; 
+    }
+
+    .Login span {
+        display: none; 
+    }
+
+    .container-nav {
+        width: 95%; 
+    }
+
+    .container-nav ul {
+        gap: 10px; 
+        justify-content: space-around;
+        padding: 12px 10px;
+        border-radius: 12px;
+    }
+
     .container-nav li {
-        font-size: 0.9rem;
+        font-size: 13px; 
+    }
+}
+
+/* --- CELULARES EXTRA PEQUEÑOS (360px) --- */
+@media (max-width: 360px) {
+    .title h1 {
+        font-size: 20px;
+    }
+
+    .container-nav li {
+        font-size: 11px;
+        letter-spacing: -0.5px; 
     }
 }
