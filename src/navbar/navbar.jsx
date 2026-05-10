@@ -1,7 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import styles from "./navbar.module.css"
 import { CircleUserRound, ShoppingBag } from "lucide-react";
-import { useContext, useState } from "react";
+import { useCallback, useContext, useState } from "react";
 import { FloatingCart } from "../floatingCart/floatingCart";
 import { UseFetch } from "../hooks/useFetch";
 import { CartProduct } from "../context/cartContext";
@@ -12,11 +12,17 @@ export function NavBar({ ChangeCategory }) {
   const [Open, setOpen] = useState(false);
   const { countcart } = UseFetch();
   const { product } = useContext(CartProduct);
-  const OpenCart = () => setOpen(!Open);
   const navigate = useNavigate();
 
   const validation = UseAuthStore((validate) => validate.authenticated);
   const UserName = UseAuthStore((UserData) => UserData.username);
+  const logout = UseAuthStore((log) => log.logout);
+
+
+  const OpenCart = useCallback(() => {
+    setOpen(prev => !prev);
+  }, []);
+
 
   const ShowCart = () => {
     if (!Open) {
@@ -31,15 +37,20 @@ export function NavBar({ ChangeCategory }) {
   }
 
 
+  const EndSession = () => {
+    logout();
+    navigate("/");
+  }
 
-  const Listfilter = (category) => {
+
+  const Listfilter = useCallback((category) => {
     if (!ChangeCategory) {
       navigate("/");
     } else {
       ChangeCategory(category);
     }
 
-  }
+  }, [ChangeCategory, navigate]);
 
 
 
@@ -65,12 +76,17 @@ export function NavBar({ ChangeCategory }) {
 
           {
             validation ? (
-              <div className={styles.Login}>
-                {UserName.username}
+              <div className={styles.Logout}>
+                <div className={styles["user-info"]}>
+                  {UserName.username}
+                  <button onClick={EndSession} className={styles.session}>
+                    Logout
+                  </button>
+                </div>
                 <CircleUserRound className={styles.user} />
               </div>
             ) : (
-              <Link to="/" className={styles.Login}>
+              <Link to="/login" className={styles.Login}>
                 Login
                 <CircleUserRound className={styles.user} />
               </Link>

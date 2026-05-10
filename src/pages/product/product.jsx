@@ -16,8 +16,6 @@ export const ProductData = () => {
     const { addToCart } = useContext(CartProduct);
 
 
-    const AddToCart = useCartStore((cartStore) => cartStore.AddToCart)
-
     
     if (loading) {
         return <div>Cargando productos...</div>;
@@ -40,7 +38,6 @@ export const ProductData = () => {
         
         addToCart(ProductData);
         resetCount();
-        AddToCart(ProductData);
     }
 
 

@@ -53,6 +53,18 @@
     font-family: inherit;
     transition: background-color 0.3s ease;
     gap: 10px;
+}
+
+.Logout {
+    display: flex;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.3);
+    padding: 12px 24px;
+    border-radius: 15px;
+    color: #111;
+    font-family: inherit;
+    transition: background-color 0.3s ease;
+    gap: 10px;
     border: none;
 }
 
@@ -63,6 +75,25 @@
 .user {
     color: white; 
     font-size: 20px;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    font-size: 14px; 
+    color: white;
+    margin-right: 5px;
+}
+
+.session {
+    background: transparent;
+    border: none;
+    color: #ff8a8a; 
+    font-size: 12px; 
+    cursor: pointer;
+    text-decoration: underline;
+    padding: 0;
 }
 
 

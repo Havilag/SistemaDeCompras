@@ -3,25 +3,37 @@ import { Home } from "../pages/home/home";
 import { ProductData } from "../pages/product/product";
 import { Checkout } from "../pages/checkout/checkout";
 import { Login } from "../pages/login/login";
+import { ProtectedRouter } from "./router-protection";
 
 
 
 
 export const Router = createBrowserRouter([
+
     {
         path: "/",
-        element:<Login />
+        element: <Home />
     },
-    {
-        path: "/home",
-        element: <Home />,
-    },
+
     {
         path: "/product/:id",
         element: <ProductData />
     },
+
     {
-        path: "/checkout",
-        element: <Checkout />
+        path: "/login",
+        element: <Login />
+    },
+
+    {
+        element: <ProtectedRouter />,
+        children: [
+
+            {
+                path: "/checkout",
+                element: <Checkout />
+            }
+
+        ]
     }
 ]);

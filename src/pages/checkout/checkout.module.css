@@ -293,6 +293,23 @@
 }
 
 
+.cart-empty{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    text-align: center;
+    gap: 20px;
+    font-family: inherit;
+}
+
+.cart-empty{
+    font-size: 20px;
+    color: #304062;
+}
+
+
 
 /* --- COMPUTADORAS --- */
 @media (min-width: 1441px) {
