@@ -1,8 +1,13 @@
 # Aura E-Commerce
-Modern e-commerce application built with React, Vite, Zustand, and React Router. Includes authentication, shopping
-cart persistence, checkout system, dynamic filtering, and PDF invoice generation.
+
+Modern e-commerce application built with React, Vite, Zustand, and React Router.
+
+Includes authentication, shopping cart persistence, checkout system, dynamic filtering, and PDF invoice generation.
+
+---
 
 # Tech Stack
+
 | Category | Technology |
 |---|---|
 | Framework | React + Vite |
@@ -15,50 +20,93 @@ cart persistence, checkout system, dynamic filtering, and PDF invoice generation
 | PDF Generation | React PDF Renderer |
 | Hooks | Custom React Hooks |
 
+---
 
 # Features
-• Product listing with pagination
-• Product filtering by category
-• Product detail page
-• Shopping cart system
-• Cart persistence using localStorage
-• Authentication system
-• Dynamic checkout
-• PDF purchase summary generation
-• Responsive design
-• Offline detection
-• Custom hooks architecture
+
+- Product listing with pagination
+- Product filtering by category
+- Product detail page
+- Shopping cart system
+- Cart persistence using localStorage
+- Authentication system
+- Dynamic checkout
+- PDF purchase summary generation
+- Responsive design
+- Offline detection
+- Custom hooks architecture
+
+---
 
 # Prerequisites
+
 Before running the project, make sure you have installed:
-• Node.js 18+
-• npm or yarn
-• Git
+
+- Node.js 18+
+- npm or yarn
+- Git
+
+---
 
 # Installation
+
 Clone the repository:
+
+```bash
 git clone https://github.com/your-user/aura-ecommerce.git
+```
+
 Move into the project folder:
+
+```bash
 cd aura-ecommerce
+```
+
 Install dependencies:
+
+```bash
 npm install
+```
+
+---
 
 # Run Development Server
-npm run dev
-The application will run at:
-http://localhost:5173
 
+```bash
+npm run dev
+```
+
+The application will run at:
+
+```bash
+http://localhost:5173
+```
+
+---
 
 # Build for Production
-npm run build
-Preview Production Build
-npm run preview
 
+```bash
+npm run build
+```
+
+Preview production build:
+
+```bash
+npm run preview
+```
+
+---
 
 # Scripts
-• npm run dev ® Start development server
-• npm run build ® Build for production
 
+| Command | Description |
+|---|---|
+| npm run dev | Start development server |
+| npm run build | Build for production |
+| npm run preview | Preview production build |
+
+---
 
 # Project Structure
 
@@ -100,65 +148,120 @@ src/
 ├── App.jsx
 ├── main.jsx
 └── index.css
-
 ```
+
+---
+
 # Demo Credentials
+
+```txt
 Username: emilys
 Password: emilyspass
+```
+
+---
 
 # Important Notes
-• The application uses demo APIs for authentication and products.
-• Internet connection is required to load products correctly.
-• Cart and authentication data are persisted using localStorage.
-• Clearing browser storage will remove cart and login session data.
-• Checkout form data is not persisted after page refresh.
-• The Address and Payment sections must be expanded and completed before pressing the Buy button.
-• If the Address or Payment forms are collapsed or incomplete, the purchase process will not continue.
-• The project is intended for educational purposes only.
+
+- The application uses demo APIs for authentication and products.
+- Internet connection is required to load products correctly.
+- Cart and authentication data are persisted using localStorage.
+- Clearing browser storage will remove cart and login session data.
+- Checkout form data is not persisted after page refresh.
+- The Address and Payment sections must be expanded and completed before pressing the Buy button.
+- If the Address or Payment forms are collapsed or incomplete, the purchase process will not continue.
+- The project is intended for educational purposes only.
+
+---
 
 # Authentication
+
 Authentication is handled using Zustand Persist.
+
 Persistence key:
+
+```txt
 auth-storage
+```
+
+---
 
 # Shopping Cart
+
 Cart functionality includes:
-• Add products
-• Remove products
-• Increase quantity
-• Decrease quantity
-• Persistent storage
-• Automatic total calculation
-Persistence key: cart-products
+
+- Add products
+- Remove products
+- Increase quantity
+- Decrease quantity
+- Persistent storage
+- Automatic total calculation
+
+Persistence key:
+
+```txt
+cart-products
+```
+
+---
 
 # Routing
+
 Main routes:
-• / ® Home page
-• /login ® Login page
-• /product/:id ® Product details
-• /checkout ® Checkout page
+
+| Route | Description |
+|---|---|
+| / | Home page |
+| /login | Login page |
+| /product/:id | Product details |
+| /checkout | Checkout page |
+
+---
 
 # PDF Invoice Generation
+
 Uses:
+
+```txt
 @react-pdf/renderer
+```
+
 Generated PDF includes:
-• Purchased products
-• Quantities
-• Total amount
-• User information
+
+- Purchased products
+- Quantities
+- Total amount
+- User information
+
+---
 
 # Responsive Design
+
 Supports:
-• Desktop
-• Laptop
-• Tablet
-• Mobile devices
+
+- Desktop
+- Laptop
+- Tablet
+- Mobile devices
+
+---
 
 # APIs Used
-Products API:  https://dummyjson.com/products
-Authentication API:  https://dummyjson.com/auth/login
 
+Products API:
 
+```txt
+https://dummyjson.com/products
+```
+
+Authentication API:
+
+```txt
+https://dummyjson.com/auth/login
+```
+
+---
 
 # Author
+
 Developed by Hector Avila.
