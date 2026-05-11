@@ -376,8 +376,8 @@
 }
 
 
-/* --- RESPONSIVE DESIGN ACTUALIZADO --- */
-@media (min-width: 1441px) {
+
+@media (min-width: 1440px) {
     .MainContainer {
         max-width: 1400px;
     }
@@ -386,7 +386,7 @@
     }
 }
 
-/* --- Laptops y Pantallas Medianas ---  */
+
 @media (max-width: 1440px) and (min-width: 1025px) {
     .MainContainer {
         width: 900px;
@@ -402,7 +402,7 @@
     height: 100px;
 }
 
-/* --- Tablets y Laptops Pequeñas --- */
+
 @media (max-width: 1024px) {
     .MainContainer {
         width: 95%;
@@ -420,7 +420,7 @@
     }
 }
 
-/* --- Celulares ---  */
+
 @media (max-width: 480px) {
     .header {
         padding: 0.8rem 15px;

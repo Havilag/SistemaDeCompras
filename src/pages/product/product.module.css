@@ -67,7 +67,6 @@
     
 }
 
-
 .container-products{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -161,7 +160,7 @@
     background-color: rgba(0, 0, 0, 0.5); 
 }
 
-/* --- TABLETS (Promedio 768px a 1024px) --- */
+
 @media (max-width: 1024px) {
     .container-products {
         gap: 30px;
@@ -177,7 +176,7 @@
     }
 }
 
-/* --- CELULARES (Promedio 480px) --- */
+
 @media (max-width: 480px) {
     .container-products {
         grid-template-columns: 1fr; 
@@ -216,7 +215,6 @@
     }
 }
 
-/* --- DISPOSITIVOS MUY PEQUEÑOS (360px) --- */
 @media (max-width: 360px) {
     .container-products {
         width: 320px;

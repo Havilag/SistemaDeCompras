@@ -40,8 +40,8 @@
     margin-top: 20px;
 }
 
-/* --- TABLETS  --- */
-@media (min-width: 768px) {
+
+@media (min-width: 770px) {
     .container h1 {
         font-size: 34px;
         letter-spacing: 6px;
@@ -52,7 +52,7 @@
     }
 }
 
-/* --- LAPTOPS Y COMPUTADORAS --- */
+
 @media (min-width: 1024px) {
     .container h1 {
         font-size: 40px; 
