@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom"
 import { useProduct } from "../../hooks/useProducts"
 import { useFilterProducts } from "../../hooks/useFilterProducts"
 import { OfflinePage } from "../../components/error/offline-page"
+import { Footer } from "../../components/footer/footer"
 
 
 export const Home = () => {
@@ -58,6 +59,10 @@ export const Home = () => {
                 <div onClick={NextPage} className={styles.NavRight}>
                     <ChevronRight size={30} />
                 </div>
+            </div>
+
+            <div className={styles.footer}>
+                <Footer />
             </div>
 
         </div>

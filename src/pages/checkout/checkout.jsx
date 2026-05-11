@@ -1,5 +1,5 @@
 import { CircleMinus, CirclePlus, CircleUserRound, CreditCard, MapPinHouse, MoveLeft, MoveLeftIcon } from "lucide-react"
-import { CheckCircle, FileText } from "lucide-react"; 
+import { CheckCircle, FileText } from "lucide-react";
 import { PDFDownloadLink } from "@react-pdf/renderer";
 import { useContext, useState } from "react";
 import { CartProduct } from "../../context/cartContext";
@@ -9,6 +9,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { UseAuthStore } from "../../store/useAuthStore";
 import { useReditect } from "../../hooks/useRedirect";
 import { PurchaseSummary } from "../../components/reports/purchase-summary";
+import { Footer } from "../../components/footer/footer";
 
 export const Checkout = () => {
 
@@ -49,7 +50,7 @@ export const Checkout = () => {
             alert("Please fill in all the required={AddressVisible} fields");
             return;
         }
-        
+
 
         setSummaryData({
             products: [...ProductCart],
@@ -216,6 +217,10 @@ export const Checkout = () => {
                         </div>
                     </form>
                 </>)}
+            </div>
+
+            <div className={styles.footer}>
+                <Footer />
             </div>
         </div>
     )

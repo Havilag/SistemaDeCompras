@@ -7,6 +7,7 @@ import { useContext } from "react";
 import { CartProduct } from "../../context/cartContext";
 import { useCartStore } from "../../store/useCartStore";
 import { useProduct } from "../../hooks/useProducts";
+import { Footer } from "../../components/footer/footer";
 
 export const ProductData = () => {
 
@@ -72,6 +73,11 @@ export const ProductData = () => {
                 </div>
 
             </div>
+
+            <div className={styles.footer}>
+                <Footer />
+            </div>
+
         </div>
     )
 }

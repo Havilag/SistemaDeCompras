@@ -397,6 +397,11 @@
     }
 }
 
+.footer{
+    width: auto;
+    height: 100px;
+}
+
 /* --- Tablets y Laptops Pequeñas --- */
 @media (max-width: 1024px) {
     .MainContainer {

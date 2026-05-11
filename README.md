@@ -112,38 +112,28 @@ npm run preview
 
 ```bash
 src/
-├── components/
-│   ├── navbar/
-│   ├── floatingCart/
-│   ├── reports/
-│   └── error/
+├── components/        # Reusable UI components
+│   ├── navbar/        # Navigation bar
+│   ├── footer/        # Footer section
+│   ├── floatingCart/  # Floating shopping cart
+│   ├── reports/       # PDF reports and invoices
+│   └── error/         # Error components and pages
 │
-├── context/
-│   └── cartContext.jsx
+├── context/           # React Context providers
 │
-├── hooks/
-│   ├── useCount.js
-│   ├── useFilterProducts.js
-│   ├── useProducts.js
-│   └── useRedirect.js
+├── hooks/             # Custom React hooks
 │
-├── pages/
+├── pages/             # Application pages
 │   ├── home/
 │   ├── login/
 │   ├── product/
 │   └── checkout/
 │
-├── router/
-│   ├── router.jsx
-│   └── router-protection.jsx
+├── router/            # Routing configuration and protection
 │
-├── services/
-│   ├── api-products.js
-│   └── api-login.js
+├── services/          # API requests and services
 │
-├── store/
-│   ├── useAuthStore.js
-│   └── useCartStore.js
+├── store/             # Zustand global stores
 │
 ├── App.jsx
 ├── main.jsx
@@ -259,6 +249,18 @@ Authentication API:
 ```txt
 https://dummyjson.com/auth/login
 ```
+
+---
+
+# Deploy
+
+Live application:
+
+https://sistema-de-compras-blond.vercel.app/
+
+
+---
+
 
 ---
 
