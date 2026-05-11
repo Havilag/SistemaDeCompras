@@ -30,7 +30,6 @@ export const ApiProduct = async () => {
         CategoryInclude.includes(product.category)
     );
 
-      console.log(filtered);
     return filtered.map(product => ({
         id: product.id,
         title: product.title,

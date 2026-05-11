@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { CartProduct } from "../context/cartContext"
+import { CartProduct } from "../../context/cartContext"
 import styles from "./floatingCart.module.css"
 import { Link } from "react-router-dom";
 

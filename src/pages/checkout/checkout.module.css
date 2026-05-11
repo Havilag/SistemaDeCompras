@@ -292,6 +292,9 @@
     font-weight: 700;
 }
 
+.make-purchase button{
+    cursor: pointer;
+}
 
 .cart-empty{
     display: flex;
@@ -310,92 +313,184 @@
 }
 
 
+.Container-PDF {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    max-width: 500px;
+    margin: 40px auto;
+    animation: fadeIn 0.5s ease-out;
+}
 
-/* --- COMPUTADORAS --- */
+.Download {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+    background-color: #f9fafb;
+    border: 2px dashed #e5e7eb;
+    border-radius: 8px;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.DownloadLink {
+    background-color: #6366f1;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.DownloadLink:hover {
+    background-color: #4f46e5;
+}
+
+.FinishBtn {
+    background-color: #10b981;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.FinishBtn:hover {
+    background-color: #059669;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
+}
+
+
+/* --- RESPONSIVE DESIGN ACTUALIZADO --- */
 @media (min-width: 1441px) {
     .MainContainer {
         max-width: 1400px;
-        margin: 0 auto;
     }
     .list-product {
         grid-template-columns: 120px 1fr 180px;
     }
 }
 
-/* --- LAPTOPS --- */
+/* --- Laptops y Pantallas Medianas ---  */
 @media (max-width: 1440px) and (min-width: 1025px) {
     .MainContainer {
-        width: 850px;
+        width: 900px;
         margin: 0 auto;
     }
-    .list-product {
-        grid-template-columns: 100px 1fr 150px;
+    .GoBack {
+        left: 20px; 
     }
 }
 
-/* --- TABLETS --- */
-@media (max-width: 1024px) and (min-width: 481px) {
+/* --- Tablets y Laptops Pequeñas --- */
+@media (max-width: 1024px) {
     .MainContainer {
-        width: 90%;
-        margin: 0 auto;
+        width: 95%;
+        padding-top: 80px; 
     }
-    .list-product {
-        grid-template-columns: 80px 1fr 120px;
-        gap: 15px;
+
+    .purchase, .additional-data, .payment-method, .make-purchase {
+        max-width: 100%;
+        margin: 20px 15px;
     }
-    .Form-Address, .Form-payment {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 20px;
+
+    .GoBack {
+        top: 20px;
+        left: 15px;
     }
 }
 
-/* --- CELULARES --- */
+/* --- Celulares ---  */
 @media (max-width: 480px) {
-    .MainContainer {
-        width: 100%;
-        padding: 0 10px;
+    .header {
+        padding: 0.8rem 15px;
     }
 
-    .make-purchase a {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        padding: 15px 0;
+    .header h1 {
         font-size: 18px;
-        border-radius: 30px;
+    }
+
+    .login {
+        padding: 6px 12px;
+        font-size: 14px;
+    }
+
+    .GoBack {
+        position: relative; 
+        top: 0;
+        left: 15px;
+        margin-bottom: 20px;
+        width: fit-content;
+    }
+
+    .MainContainer {
+        padding-top: 20px;
     }
 
     .list-product {
+        display: flex;
         flex-direction: column;
+        align-items: center;
         text-align: center;
-        padding: 20px 0;
-        border-bottom: 1px solid #eee;
+        gap: 10px;
     }
 
-    .product-info h2 {
-        font-size: 16px;
-        margin-bottom: 10px;
+    .list-product img {
+        width: 120px;
+        height: 120px;
     }
 
-    .quantity {
-        justify-content: center;
+    .subtotalText, .Total-Cost {
+        text-align: center;
+        padding-right: 0;
     }
 
-    .subTotal {
-        margin-top: 10px;
-        font-size: 16px;
-    }
-y
     .Form-Address, .Form-payment {
         display: flex;
         flex-direction: column;
         gap: 10px;
     }
 
+    .Form-Address p, .Form-payment p {
+        grid-column: span 1;
+    }
+
     .Form-Address input, .Form-payment input {
+        grid-column: span 1;
+        font-size: 14px;
+    }
+
+    .Container-PDF {
+        margin: 20px 15px;
+        padding: 25px 15px;
+    }
+
+    .Container-PDF h2 {
+        font-size: 1.2rem;
+    }
+
+    .Download p {
+        font-size: 14px;
+    }
+
+    .DownloadLink, .FinishBtn {
         width: 100%;
-        padding: 12px;
+        padding: 15px;
+        font-size: 16px;
     }
 }

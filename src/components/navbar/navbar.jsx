@@ -3,14 +3,13 @@ import styles from "./navbar.module.css"
 import { CircleUserRound, ShoppingBag } from "lucide-react";
 import { useCallback, useContext, useState } from "react";
 import { FloatingCart } from "../floatingCart/floatingCart";
-import { UseFetch } from "../hooks/useFetch";
-import { CartProduct } from "../context/cartContext";
-import { UseAuthStore } from "../store/useAuthStore";
+import { CartProduct } from "../../context/cartContext";
+import { UseAuthStore } from "../../store/useAuthStore";
 
 export function NavBar({ ChangeCategory }) {
 
   const [Open, setOpen] = useState(false);
-  const { countcart } = UseFetch();
+
   const { product } = useContext(CartProduct);
   const navigate = useNavigate();
 

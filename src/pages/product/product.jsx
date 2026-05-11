@@ -1,31 +1,34 @@
 import { useParams } from "react-router-dom";
-import { UseFetch } from "../../hooks/useFetch";
 import styles from "./product.module.css";
-import { NavBar } from "../../navbar/navbar";
+import { NavBar } from "../../components/navbar/navbar";
 import { CircleUserRound, SquareMinus, SquarePlus } from "lucide-react";
 import { useCount } from "../../hooks/useCount";
 import { useContext } from "react";
 import { CartProduct } from "../../context/cartContext";
 import { useCartStore } from "../../store/useCartStore";
+import { useProduct } from "../../hooks/useProducts";
 
 export const ProductData = () => {
 
     const { id } = useParams();
-    const {allProducts, products, loading } = UseFetch("all");
-    const {count, increase, decrease, resetCount} = useCount();
+    const { count, increase, decrease, resetCount } = useCount();
     const { addToCart } = useContext(CartProduct);
+    const { AllProducts, loading, error } = useProduct();
 
 
-    
     if (loading) {
-        return <div>Cargando productos...</div>;
+        return <div className={styles.loading}>Cargando productos...</div>;
     }
 
-    const product = allProducts.find((item) => item.id === Number(id));
-    
+    if (error) {
+        return <div className={styles.error}>Error: {error}</div>
+    }
 
-    const SendProduct = () =>{
-        if(!product){
+    const product = AllProducts.find((item) => item.id === Number(id));
+
+
+    const SendProduct = () => {
+        if (!product) {
             return;
         }
         const ProductData = {
@@ -35,13 +38,13 @@ export const ProductData = () => {
             price: product.price,
             quantity: count
         }
-        
+
         addToCart(ProductData);
         resetCount();
     }
 
 
-    
+
 
     return (
         <div className={styles.container}>
@@ -60,9 +63,9 @@ export const ProductData = () => {
                     <p><span>${product.price}</span></p>
 
                     <div className={styles["button-buy"]}>
-                        <SquareMinus onClick={decrease}/>
+                        <SquareMinus onClick={decrease} />
                         <p>{count}</p>
-                        <SquarePlus onClick={increase}/>
+                        <SquarePlus onClick={increase} />
                     </div>
 
                     <button onClick={() => SendProduct()} className={styles.buy}>Add</button>

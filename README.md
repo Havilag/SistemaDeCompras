@@ -1,16 +1,164 @@
-# React + Vite
+# Aura E-Commerce
+Modern e-commerce application built with React, Vite, Zustand, and React Router. Includes authentication, shopping
+cart persistence, checkout system, dynamic filtering, and PDF invoice generation.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Tech Stack
+| Category | Technology |
+|---|---|
+| Framework | React + Vite |
+| Language | JavaScript (ES6+) |
+| Routing | React Router DOM |
+| State Management | Zustand + Context API |
+| Persistence | Zustand Persist |
+| Styling | CSS Modules |
+| Icons | Lucide React |
+| PDF Generation | React PDF Renderer |
+| Hooks | Custom React Hooks |
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+# Features
+• Product listing with pagination
+• Product filtering by category
+• Product detail page
+• Shopping cart system
+• Cart persistence using localStorage
+• Authentication system
+• Dynamic checkout
+• PDF purchase summary generation
+• Responsive design
+• Offline detection
+• Custom hooks architecture
 
-## React Compiler
+# Prerequisites
+Before running the project, make sure you have installed:
+• Node.js 18+
+• npm or yarn
+• Git
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+# Installation
+Clone the repository:
+git clone https://github.com/your-user/aura-ecommerce.git
+Move into the project folder:
+cd aura-ecommerce
+Install dependencies:
+npm install
 
-## Expanding the ESLint configuration
+# Run Development Server
+npm run dev
+The application will run at:
+http://localhost:5173
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+# Build for Production
+npm run build
+Preview Production Build
+npm run preview
+
+
+# Scripts
+• npm run dev ® Start development server
+• npm run build ® Build for production
+
+
+# Project Structure
+
+```bash
+src/
+├── components/
+│   ├── navbar/
+│   ├── floatingCart/
+│   ├── reports/
+│   └── error/
+│
+├── context/
+│   └── cartContext.jsx
+│
+├── hooks/
+│   ├── useCount.js
+│   ├── useFilterProducts.js
+│   ├── useProducts.js
+│   └── useRedirect.js
+│
+├── pages/
+│   ├── home/
+│   ├── login/
+│   ├── product/
+│   └── checkout/
+│
+├── router/
+│   ├── router.jsx
+│   └── router-protection.jsx
+│
+├── services/
+│   ├── api-products.js
+│   └── api-login.js
+│
+├── store/
+│   ├── useAuthStore.js
+│   └── useCartStore.js
+│
+├── App.jsx
+├── main.jsx
+└── index.css
+
+```
+# Demo Credentials
+Username: emilys
+Password: emilyspass
+
+# Important Notes
+• The application uses demo APIs for authentication and products.
+• Internet connection is required to load products correctly.
+• Cart and authentication data are persisted using localStorage.
+• Clearing browser storage will remove cart and login session data.
+• Checkout form data is not persisted after page refresh.
+• The Address and Payment sections must be expanded and completed before pressing the Buy button.
+• If the Address or Payment forms are collapsed or incomplete, the purchase process will not continue.
+• The project is intended for educational purposes only.
+
+# Authentication
+Authentication is handled using Zustand Persist.
+Persistence key:
+auth-storage
+
+# Shopping Cart
+Cart functionality includes:
+• Add products
+• Remove products
+• Increase quantity
+• Decrease quantity
+• Persistent storage
+• Automatic total calculation
+Persistence key: cart-products
+
+# Routing
+Main routes:
+• / ® Home page
+• /login ® Login page
+• /product/:id ® Product details
+• /checkout ® Checkout page
+
+# PDF Invoice Generation
+Uses:
+@react-pdf/renderer
+Generated PDF includes:
+• Purchased products
+• Quantities
+• Total amount
+• User information
+
+# Responsive Design
+Supports:
+• Desktop
+• Laptop
+• Tablet
+• Mobile devices
+
+# APIs Used
+Products API:  https://dummyjson.com/products
+Authentication API:  https://dummyjson.com/auth/login
+
+
+
+# Author
+Developed by Hector Avila.

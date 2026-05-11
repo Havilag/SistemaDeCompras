@@ -1,0 +1,67 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+    background-color: white; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 20px; 
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+.container h1 {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 40px; 
+    letter-spacing: 8px;
+    width: 100%;
+    text-align: center;
+    color: #000000;
+}
+
+.error {
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.error h2 {
+    font-size: 14px;
+    font-weight: 400;
+    color: #333333;
+    max-width: 450px; 
+    margin-top: 20px;
+}
+
+/* --- TABLETS  --- */
+@media (min-width: 768px) {
+    .container h1 {
+        font-size: 34px;
+        letter-spacing: 6px;
+    }
+    .error h2 {
+        font-size: 16px;
+        max-width: 400px;
+    }
+}
+
+/* --- LAPTOPS Y COMPUTADORAS --- */
+@media (min-width: 1024px) {
+    .container h1 {
+        font-size: 40px; 
+        margin-bottom: 40px; 
+        letter-spacing: 8px;
+    }
+    .error h2 {
+        font-size: 18px;
+        max-width: 450px; 
+        margin-top: 20px;
+    }
+}

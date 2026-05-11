@@ -7,6 +7,9 @@ export const useCartStore = create(
 
     cart: [], 
 
+    clearCart: () => set({ cart: [] }),
+    
+
     RemoveProduct: (id) =>set((state) => {
 
         const productExiste = state.cart.find((cartProductID) => cartProductID.id === id);

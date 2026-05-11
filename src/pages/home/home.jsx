@@ -1,35 +1,45 @@
 import { useEffect, useState } from "react"
-import { NavBar } from "../../navbar/navbar"
+import { NavBar } from "../../components/navbar/navbar"
 import { ApiProduct } from "../../services/api-products"
 import styles from "./home.module.css"
 import { ChevronLeft, ChevronRight, CircleUserRound } from "lucide-react"
-import { UseFetch } from "../../hooks/useFetch"
 import { useNavigate } from "react-router-dom"
+import { useProduct } from "../../hooks/useProducts"
+import { useFilterProducts } from "../../hooks/useFilterProducts"
+import { OfflinePage } from "../../components/error/offline-page"
 
 
 export const Home = () => {
 
-    const [selectedCategory, setSelectedCategory] = useState("all");
-    const {products, loading, page, NextPage, PrevPage } = UseFetch(selectedCategory);
+
     const navigate = useNavigate();
+
+    const [selectCategory, setselectCategory] = useState("all");
+    const { AllProducts, loading, error } = useProduct();
+    const { FilterProduct, ProductPerPage, page, NextPage, PrevPage } = useFilterProducts(AllProducts, selectCategory);
+
     const category = ["all", "clothing", "Accessories", "footwear"]
 
-  
+
 
     if (loading) {
-        return <div>Cargando productos...</div>;
+        return <div className={styles.loading}>Cargando productos...</div>;
     }
 
-  
+    if (error) {
+        return <OfflinePage />
+    }
+
+
 
     return (
         <div className={styles.container}>
-            <NavBar ChangeCategory={setSelectedCategory}/>
+            <NavBar ChangeCategory={setselectCategory} />
 
             <div className={styles["products-grid"]}>
                 {
-                    
-                    products.map((product) => (
+
+                    ProductPerPage.map((product) => (
                         <div key={product.id} onClick={() => navigate(`/product/${product.id}`)} className={styles["Date-products"]}>
                             <img src={product.image} />
                             <p>{product.title}</p>
