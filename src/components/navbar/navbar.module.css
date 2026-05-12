@@ -171,7 +171,7 @@
 
 
 
-/* --- TABLETS (Promedio 768px) --- */
+
 @media (max-width: 768px) {
     .full-header {
         padding: 20px 0 30px 0; 
@@ -186,7 +186,7 @@
     }
 }
 
-/* --- CELULARES (Promedio 480px) --- */
+
 @media (max-width: 480px) {
     .full-header {
         padding: 15px 0 20px 0;
@@ -230,7 +230,7 @@
     }
 }
 
-/* --- CELULARES EXTRA PEQUEÑOS (360px) --- */
+
 @media (max-width: 360px) {
     .title h1 {
         font-size: 20px;

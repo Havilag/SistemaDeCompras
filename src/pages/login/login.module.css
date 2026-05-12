@@ -76,21 +76,21 @@
 }
 
 
-/* --- COMPUTADORAS / LAPTOPS --- */
+
 @media (min-width: 1025px) {
     .Form-Login, .container a {
         width: 400px;
     }
 }
 
-/* --- TABLETS --- */
+
 @media (max-width: 1024px) and (min-width: 481px) {
     .Form-Login, .container a {
         width: 350px;
     }
 }
 
-/* --- CELULARES --- */
+
 @media (max-width: 480px) {
     .Form-Login, .container a {
         width: 320px; 
